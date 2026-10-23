@@ -3,139 +3,219 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#071b35">
-  <meta name="description" content="Gotas de Esperança: um gesto de solidariedade pode fazer a diferença.">
-  <title>Gotas de Esperança | Doe esperança</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f2">
+  <meta name="description" content="Gotas de Esperança: um espaço para cultivar solidariedade e transformar boas intenções em gestos de cuidado.">
+  <title>Gotas de Esperança | Um gesto de amor</title>
 
   <style>
+    :root {
+      --cream: #fff8f2;
+      --paper: #ffffff;
+      --rose: #d97979;
+      --rose-dark: #a94e58;
+      --green: #527a68;
+      --green-light: #eaf2e9;
+      --ink: #413b3a;
+      --muted: #776e6b;
+      --border: #eee2dc;
+      --shadow: 0 14px 45px #65483b12;
+    }
+
     * { box-sizing: border-box; }
 
-    :root {
-      --navy: #071b35;
-      --blue: #0e7490;
-      --cyan: #67e8f9;
-      --white: #ffffff;
-      --muted: #b8c9dc;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--white);
-      background:
-        radial-gradient(ellipse at top, #12476b 0%, transparent 55%),
-        var(--navy);
-      line-height: 1.6;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        "Segoe UI", sans-serif;
+      line-height: 1.65;
     }
 
     button, input { font: inherit; }
+    button { cursor: pointer; }
+    a { color: inherit; }
 
-    .container {
-      width: min(100% - 32px, 760px);
-      margin: auto;
+    .wrap {
+      width: min(100% - 36px, 780px);
+      margin-inline: auto;
     }
 
     header {
-      padding: 22px 0;
-      border-bottom: 1px solid #ffffff18;
+      padding: 17px 0;
+      border-bottom: 1px solid var(--border);
+      background: #fff8f2eF;
     }
 
     .brand {
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-weight: bold;
-      font-size: 18px;
+      gap: 11px;
+      font-weight: 750;
+      letter-spacing: -.4px;
+      font-size: 17px;
     }
 
-    .drop {
+    .brand-icon {
       display: grid;
       place-items: center;
-      width: 46px;
-      height: 46px;
-      background: #67e8f91a;
-      border: 1px solid #67e8f955;
+      width: 45px;
+      height: 45px;
       border-radius: 16px;
-      font-size: 27px;
+      color: white;
+      background: linear-gradient(145deg, #e7a4a0, #b85c6a);
+      font-size: 25px;
+      box-shadow: 0 5px 15px #b85c6a30;
     }
 
     .hero {
       text-align: center;
-      padding: 60px 0 35px;
+      padding: 52px 0 35px;
     }
 
-    .tag {
+    .eyebrow {
       display: inline-block;
+      color: var(--rose-dark);
+      background: #f7e7e3;
       padding: 6px 13px;
-      border: 1px solid #67e8f955;
       border-radius: 30px;
-      color: var(--cyan);
       font-size: 12px;
+      font-weight: 750;
       letter-spacing: 1px;
       text-transform: uppercase;
     }
 
     h1 {
-      margin: 22px 0 16px;
-      font-size: clamp(35px, 8vw, 56px);
-      line-height: 1.08;
-      letter-spacing: -1.5px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: clamp(38px, 9vw, 62px);
+      line-height: 1.1;
+      letter-spacing: -1.7px;
+      margin: 22px 0 17px;
     }
 
-    h1 span { color: var(--cyan); }
+    h1 span { color: var(--rose-dark); }
 
     .intro {
-      max-width: 540px;
+      max-width: 560px;
       margin: auto;
       color: var(--muted);
-      font-size: 17px;
+      font-size: 16px;
     }
 
-    .cards {
+    .hero-art {
+      position: relative;
+      overflow: hidden;
+      margin: 30px auto 0;
+      padding: 30px 18px;
+      border-radius: 26px;
+      background: linear-gradient(140deg, #f5e3dd, #e9eee2);
+    }
+
+    .flower {
+      font-size: 55px;
+      line-height: 1.3;
+    }
+
+    .hero-art p {
+      max-width: 390px;
+      margin: 8px auto 0;
+      font-family: Georgia, serif;
+      font-size: 20px;
+      color: #61504c;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      min-height: 49px;
+      border: 0;
+      border-radius: 13px;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-weight: 750;
+      transition: transform .15s, filter .15s;
+    }
+
+    .button:active { transform: scale(.985); }
+    .button:focus-visible, input:focus-visible {
+      outline: 3px solid #d9797980;
+      outline-offset: 3px;
+    }
+
+    .button-main {
+      color: white;
+      background: linear-gradient(110deg, #c56870, #ad5663);
+      box-shadow: 0 7px 17px #b85c6a26;
+    }
+
+    .button-light {
+      color: var(--green);
+      background: var(--green-light);
+      border: 1px solid #d4e3d4;
+    }
+
+    .hero .button {
+      width: auto;
+      margin-top: 24px;
+      padding-inline: 25px;
+    }
+
+    .section { padding: 26px 0; }
+
+    .section-heading { text-align: center; margin-bottom: 22px; }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 500;
+      font-size: clamp(27px, 6vw, 36px);
+      line-height: 1.2;
+      margin: 0 0 9px;
+    }
+
+    .section-heading p {
+      max-width: 500px;
+      margin: auto;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .values {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 12px;
-      margin: 35px 0;
     }
 
-    .card {
-      padding: 17px 10px;
+    .value-card {
+      background: var(--paper);
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      padding: 18px 9px;
       text-align: center;
-      background: #ffffff09;
-      border: 1px solid #ffffff17;
-      border-radius: 16px;
+      box-shadow: var(--shadow);
     }
 
-    .card .emoji {
-      font-size: 26px;
-      display: block;
-      margin-bottom: 7px;
-    }
-
-    .card strong { font-size: 14px; }
-
-    .card p {
-      margin: 5px 0 0;
-      font-size: 12px;
-      color: var(--muted);
-    }
+    .value-card .emoji { display: block; font-size: 25px; }
+    .value-card strong { display: block; font-size: 14px; margin-top: 6px; }
+    .value-card p { color: var(--muted); font-size: 12px; margin: 5px 0 0; }
 
     .donation {
-      padding: 27px 22px;
-      background: #ffffff0c;
-      border: 1px solid #ffffff20;
+      padding: 25px 20px;
       border-radius: 23px;
-      box-shadow: 0 20px 70px #00000020;
+      background: var(--paper);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
     }
 
-    h2 {
-      margin: 0 0 8px;
-      font-size: 25px;
-    }
+    .donation h2 { font-size: 29px; }
 
     .sub {
-      margin: 0 0 22px;
+      margin: 0 0 20px;
       color: var(--muted);
       font-size: 14px;
     }
@@ -144,274 +224,323 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
-      margin-bottom: 16px;
+      margin: 19px 0;
     }
 
     .amount {
       padding: 13px;
-      border: 1px solid #ffffff30;
       border-radius: 12px;
-      color: white;
-      background: #ffffff08;
-      cursor: pointer;
-      font-weight: bold;
+      border: 1px solid var(--border);
+      background: #fffaf7;
+      color: var(--ink);
+      font-weight: 750;
     }
 
     .amount.active {
-      border-color: var(--cyan);
-      background: #67e8f91b;
-      color: var(--cyan);
+      color: var(--rose-dark);
+      border-color: var(--rose);
+      background: #fbefec;
+      box-shadow: inset 0 0 0 1px #d9797920;
     }
 
     label {
       display: block;
-      margin-bottom: 7px;
+      margin: 0 0 7px;
       font-size: 13px;
-      color: var(--muted);
+      font-weight: 650;
     }
 
     input {
       width: 100%;
-      padding: 13px;
-      border: 1px solid #ffffff30;
+      min-height: 48px;
+      padding: 12px;
+      color: var(--ink);
+      background: white;
+      border: 1px solid #d9ccc5;
       border-radius: 11px;
-      background: #061529;
-      color: white;
-      outline-color: var(--cyan);
     }
 
-    .primary, .secondary {
-      display: block;
-      width: 100%;
-      padding: 15px;
-      border: 0;
-      border-radius: 12px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+    .donation .button { margin-top: 12px; }
 
-    .primary {
-      margin-top: 16px;
-      color: #062033;
-      background: linear-gradient(100deg, #67e8f9, #a5f3fc);
-    }
-
-    .secondary {
-      margin-top: 10px;
-      color: white;
-      background: #ffffff12;
-      border: 1px solid #ffffff30;
-    }
-
-    button:focus-visible {
-      outline: 3px solid white;
-      outline-offset: 3px;
-    }
-
-    .pix-info {
+    .pix-box {
       display: none;
       margin-top: 20px;
-      padding: 18px;
-      border-radius: 14px;
-      background: #061529;
-      border: 1px solid #67e8f955;
+      padding: 17px;
+      border-radius: 15px;
+      border: 1px solid #d4e3d4;
+      background: #f4f8f1;
     }
 
-    .pix-info.show { display: block; }
+    .pix-box.show { display: block; }
+    .pix-box h3 { margin: 0 0 7px; font-size: 19px; }
 
     .pix-key {
       overflow-wrap: anywhere;
+      background: white;
+      border: 1px dashed #9db9a4;
       padding: 12px;
-      margin: 12px 0;
+      margin: 10px 0;
       border-radius: 9px;
-      background: #ffffff0c;
       font-size: 14px;
     }
 
-    .notice {
+    .small-note {
       color: var(--muted);
       font-size: 12px;
-      margin: 13px 0 0;
+      margin: 12px 0 0;
     }
 
-    .message {
-      min-height: 24px;
-      margin-top: 10px;
+    .status {
+      min-height: 23px;
+      margin-top: 8px;
       font-size: 13px;
-      color: var(--cyan);
+      color: var(--green);
       overflow-wrap: anywhere;
     }
 
-    .transparency {
-      margin: 24px 0 45px;
-      padding: 20px;
-      border-left: 3px solid var(--cyan);
-      background: #ffffff08;
-      border-radius: 0 12px 12px 0;
+    .story {
+      padding: 24px 21px;
+      border-radius: 20px;
+      background: #f2e6df;
+      text-align: center;
     }
 
-    .transparency p {
-      margin-bottom: 0;
-      color: var(--muted);
-      font-size: 14px;
+    .story .symbol { font-size: 29px; }
+    .story p { color: #655854; font-size: 14px; margin-bottom: 0; }
+
+    .transparency {
+      margin: 15px 0 38px;
+      padding: 20px;
+      border-radius: 16px;
+      background: white;
+      border: 1px solid var(--border);
     }
+
+    .transparency h2 { font-size: 24px; }
+    .transparency p { color: var(--muted); font-size: 13px; margin-bottom: 0; }
 
     footer {
-      padding: 24px 0;
-      border-top: 1px solid #ffffff18;
       text-align: center;
+      padding: 24px 0 32px;
+      border-top: 1px solid var(--border);
       color: var(--muted);
       font-size: 12px;
     }
 
     @media (max-width: 420px) {
-      .cards { grid-template-columns: 1fr; }
-      .card { display: flex; align-items: center; text-align: left; gap: 12px; }
-      .card .emoji { margin: 0; }
-      .card p { margin-top: 2px; }
-      .donation { padding: 22px 16px; }
+      .wrap { width: min(100% - 26px, 780px); }
+      .hero { padding-top: 38px; }
+      .values { grid-template-columns: 1fr; }
+      .value-card {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        text-align: left;
+        padding: 13px;
+      }
+      .value-card .emoji { font-size: 25px; }
+      .value-card strong { margin-top: 0; }
+      .value-card p { margin-top: 2px; }
+      .donation { padding: 21px 15px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
 
 <body>
   <header>
-    <div class="container brand">
-      <div class="drop" aria-hidden="true">💧</div>
-      <div>Gotas de Esperança</div>
+    <div class="wrap brand">
+      <div class="brand-icon" aria-hidden="true">💧</div>
+      <span>Gotas de Esperança</span>
     </div>
   </header>
 
-  <main class="container">
+  <main class="wrap">
     <section class="hero">
-      <span class="tag">Solidariedade transforma</span>
-      <h1>Uma pequena gota.<br><span>Uma grande esperança.</span></h1>
+      <span class="eyebrow">Pequenos gestos, grandes significados</span>
+      <h1>Onde existe carinho,<br><span>floresce esperança.</span></h1>
       <p class="intro">
-        Acreditamos que pequenos gestos podem fazer a diferença.
-        Conheça nossa proposta e, se desejar contribuir, veja como fazer
-        uma doação com transparência.
+        Acreditamos que a solidariedade começa com um gesto.
+        Cada atitude de cuidado pode inspirar novas possibilidades
+        e aproximar pessoas dispostas a fazer o bem.
       </p>
-    </section>
 
-    <section class="cards" aria-label="Nossos compromissos">
-      <div class="card">
-        <span class="emoji">❤️</span>
-        <div><strong>Solidariedade</strong><p>Gestos que inspiram cuidado.</p></div>
-      </div>
-      <div class="card">
-        <span class="emoji">🤝</span>
-        <div><strong>União</strong><p>Juntos podemos fazer a diferença.</p></div>
-      </div>
-      <div class="card">
-        <span class="emoji">🔎</span>
-        <div><strong>Transparência</strong><p>Informações claras sobre a campanha.</p></div>
+      <a class="button button-main" href="#doar">Quero conhecer as doações ♥</a>
+
+      <div class="hero-art">
+        <div class="flower" aria-hidden="true">🌷 💧 🌿</div>
+        <p>“Que nunca nos falte sensibilidade para cuidar uns dos outros.”</p>
       </div>
     </section>
 
-    <section class="donation" id="doar">
-      <h2>Faça sua contribuição</h2>
-      <p class="sub">
-        Escolha um valor de sua preferência. Toda contribuição deve ser
-        voluntária e feita após conferir os dados do destinatário.
-      </p>
-
-      <div class="amounts" aria-label="Escolha o valor da doação">
-        <button class="amount" data-value="10" aria-pressed="false">R$ 10</button>
-        <button class="amount active" data-value="25" aria-pressed="true">R$ 25</button>
-        <button class="amount" data-value="50" aria-pressed="false">R$ 50</button>
-        <button class="amount" data-value="100" aria-pressed="false">R$ 100</button>
+    <section class="section">
+      <div class="section-heading">
+        <h2>Um gesto que vem do coração</h2>
+        <p>Solidariedade também é agir com responsabilidade, respeito e transparência.</p>
       </div>
 
-      <label for="valor">Ou escolha outro valor (R$)</label>
-      <input id="valor" type="number" min="1" max="100000" step="0.01" value="25" inputmode="decimal">
+      <div class="values">
+        <article class="value-card">
+          <span class="emoji" aria-hidden="true">❤️</span>
+          <div>
+            <strong>Empatia</strong>
+            <p>Olhar para o próximo com carinho.</p>
+          </div>
+        </article>
+        <article class="value-card">
+          <span class="emoji" aria-hidden="true">🤝</span>
+          <div>
+            <strong>União</strong>
+            <p>Valorizar cada gesto voluntário.</p>
+          </div>
+        </article>
+        <article class="value-card">
+          <span class="emoji" aria-hidden="true">🌱</span>
+          <div>
+            <strong>Esperança</strong>
+            <p>Transformar boas intenções em ações.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-      <button class="primary" id="continuar">Continuar com Pix</button>
-
-      <div class="pix-info" id="pixInfo" aria-live="polite">
-        <h2>Contribuição via Pix</h2>
-        <p class="sub">Confira a chave abaixo e copie para usar no aplicativo do seu banco.</p>
-
-        <strong>Chave Pix — e-mail</strong>
-        <div class="pix-key" id="pixKey">danielkuster39@gmail.com</div>
-
-        <button class="primary" id="copiar">📋 Copiar chave Pix</button>
-        <button class="secondary" id="copiarValor">Copiar valor da contribuição</button>
-
-        <p class="notice">
-          Abra o aplicativo do seu banco, escolha Pix por chave, cole o e-mail
-          e confira cuidadosamente o nome do destinatário antes de confirmar.
-          O valor é informado separadamente; esta página não gera uma cobrança
-          Pix automática.
+    <section class="section" id="doar">
+      <div class="donation">
+        <h2>Uma contribuição voluntária</h2>
+        <p class="sub">
+          Se desejar contribuir, escolha um valor e siga as instruções.
+          Confira os dados do destinatário antes de transferir.
         </p>
-        <p class="notice">
-          Só conclua a transferência se reconhecer e confiar no destinatário.
-          Guarde o comprovante. Copiar a chave não significa que o pagamento
-          foi realizado.
+
+        <div class="amounts" aria-label="Valores sugeridos">
+          <button type="button" class="amount" data-value="10" aria-pressed="false">R$ 10,00</button>
+          <button type="button" class="amount active" data-value="25" aria-pressed="true">R$ 25,00</button>
+          <button type="button" class="amount" data-value="50" aria-pressed="false">R$ 50,00</button>
+          <button type="button" class="amount" data-value="100" aria-pressed="false">R$ 100,00</button>
+        </div>
+
+        <label for="valor">Ou informe outro valor (R$)</label>
+        <input id="valor" type="number" min="1" max="100000" step="0.01" value="25" inputmode="decimal">
+
+        <button type="button" class="button button-main" id="continuar">
+          Ver instruções para Pix
+        </button>
+
+        <div class="pix-box" id="pixBox" aria-live="polite">
+          <h3>💚 Instruções para o Pix</h3>
+          <p class="sub">Chave Pix do tipo e-mail:</p>
+          <div class="pix-key" id="pixKey">danielkuster39@gmail.com</div>
+
+          <button type="button" class="button button-light" id="copiarChave">
+            📋 Copiar chave Pix
+          </button>
+          <button type="button" class="button button-light" id="copiarValor">
+            Copiar valor escolhido
+          </button>
+
+          <p class="small-note">
+            Abra o aplicativo do seu banco e escolha Pix por chave.
+            Cole o e-mail, informe o valor e confira o nome do destinatário.
+            Só confirme a transferência se os dados estiverem corretos e
+            você confiar no destinatário.
+          </p>
+          <p class="small-note">
+            Esta página apenas facilita a cópia dos dados. Ela não gera
+            cobrança Pix automática nem confirma pagamentos.
+          </p>
+          <div class="status" id="status" role="status"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="story">
+        <div class="symbol" aria-hidden="true">🕊️</div>
+        <h2>Esperança também é transparência</h2>
+        <p>
+          Uma iniciativa solidária precisa explicar com clareza seu propósito,
+          respeitar quem contribui e prestar contas sobre a utilização dos recursos.
         </p>
-        <div class="message" id="mensagem" role="status"></div>
       </div>
     </section>
 
     <section class="transparency">
-      <strong>Nosso compromisso com a transparência</strong>
+      <h2>Nosso compromisso</h2>
       <p>
-        Antes de divulgar ou receber doações, informe aqui quem é o responsável
-        pela campanha, qual é a finalidade, como os recursos serão utilizados
-        e como os resultados serão apresentados. Não declare ações, parcerias
-        ou resultados que ainda não tenham sido comprovados.
+        Antes de divulgar a campanha ou solicitar contribuições, informe
+        quem é o responsável, qual é a finalidade da arrecadação, como os
+        valores serão utilizados e como os resultados serão apresentados.
+        Publique apenas informações verdadeiras e comprováveis.
       </p>
     </section>
   </main>
 
   <footer>
-    Gotas de Esperança · <span id="ano"></span><br>
-    Solidariedade com responsabilidade e transparência.
+    <div class="wrap">
+      <strong>Gotas de Esperança</strong><br>
+      Cultivando solidariedade com responsabilidade.<br>
+      © <span id="ano"></span>
+    </div>
   </footer>
 
   <script>
     const valor = document.getElementById("valor");
     const botoes = document.querySelectorAll(".amount");
-    const pixInfo = document.getElementById("pixInfo");
-    const mensagem = document.getElementById("mensagem");
+    const pixBox = document.getElementById("pixBox");
+    const status = document.getElementById("status");
     const chavePix = "danielkuster39@gmail.com";
 
     document.getElementById("ano").textContent = new Date().getFullYear();
 
-    botoes.forEach((botao) => {
-      botao.addEventListener("click", () => {
-        valor.value = botao.dataset.value;
-
-        botoes.forEach((item) => {
-          const ativo = item === botao;
-          item.classList.toggle("active", ativo);
-          item.setAttribute("aria-pressed", String(ativo));
-        });
-      });
-    });
-
-    valor.addEventListener("input", () => {
+    function atualizarBotoes() {
       botoes.forEach((botao) => {
         const ativo = Number(valor.value) === Number(botao.dataset.value);
         botao.classList.toggle("active", ativo);
         botao.setAttribute("aria-pressed", String(ativo));
       });
+    }
+
+    botoes.forEach((botao) => {
+      botao.addEventListener("click", () => {
+        valor.value = botao.dataset.value;
+        atualizarBotoes();
+        status.textContent = "";
+      });
     });
 
-    document.getElementById("continuar").addEventListener("click", () => {
-      const quantia = Number(valor.value);
+    valor.addEventListener("input", atualizarBotoes);
 
-      if (!Number.isFinite(quantia) || quantia < 1 || quantia > 100000) {
-        mensagem.textContent = "Informe um valor entre R$ 1,00 e R$ 100.000,00.";
-        pixInfo.classList.add("show");
+    function valorValido() {
+      const quantia = Number(valor.value);
+      return Number.isFinite(quantia) && quantia >= 1 && quantia <= 100000;
+    }
+
+    function formatarValor() {
+      return Number(valor.value).toLocaleString("pt-BR", {
+        style: "currency",
+        currency: "BRL"
+      });
+    }
+
+    document.getElementById("continuar").addEventListener("click", () => {
+      pixBox.classList.add("show");
+
+      if (!valorValido()) {
+        status.textContent = "Informe um valor entre R$ 1,00 e R$ 100.000,00.";
         return;
       }
 
-      mensagem.textContent = "";
-      pixInfo.classList.add("show");
-      pixInfo.scrollIntoView({ behavior: "smooth", block: "nearest" });
+      status.textContent = "Valor escolhido: " + formatarValor() +
+        ". Confira os dados antes de realizar qualquer transferência.";
+
+      pixBox.scrollIntoView({ behavior: "smooth", block: "nearest" });
     });
 
-    async function copiarTexto(texto) {
+    async function copiarTexto(texto, mensagem) {
       try {
         if (navigator.clipboard && window.isSecureContext) {
           await navigator.clipboard.writeText(texto);
@@ -420,37 +549,33 @@
           campo.value = texto;
           campo.setAttribute("readonly", "");
           campo.style.position = "fixed";
-          campo.style.opacity = "0";
+          campo.style.left = "-9999px";
           document.body.appendChild(campo);
           campo.select();
           const sucesso = document.execCommand("copy");
           campo.remove();
 
-          if (!sucesso) throw new Error("Cópia indisponível");
+          if (!sucesso) throw new Error("Cópia não disponível");
         }
 
-        mensagem.textContent = "Copiado! Confira os dados antes de fazer o Pix.";
+        status.textContent = mensagem;
       } catch (erro) {
-        mensagem.textContent = "Não foi possível copiar automaticamente. Selecione e copie o texto manualmente.";
+        status.textContent =
+          "Cópia automática indisponível. Selecione e copie o texto manualmente.";
       }
     }
 
-    document.getElementById("copiar").addEventListener("click", () => {
-      copiarTexto(chavePix);
+    document.getElementById("copiarChave").addEventListener("click", () => {
+      copiarTexto(chavePix, "Chave copiada. Confira o destinatário no seu banco.");
     });
 
     document.getElementById("copiarValor").addEventListener("click", () => {
-      const quantia = Number(valor.value);
-
-      if (!Number.isFinite(quantia) || quantia < 1 || quantia > 100000) {
-        mensagem.textContent = "Informe um valor válido primeiro.";
+      if (!valorValido()) {
+        status.textContent = "Informe um valor válido primeiro.";
         return;
       }
 
-      copiarTexto(quantia.toLocaleString("pt-BR", {
-        style: "currency",
-        currency: "BRL"
-      }));
+      copiarTexto(formatarValor(), "Valor copiado: " + formatarValor() + ".");
     });
   </script>
 </body>
