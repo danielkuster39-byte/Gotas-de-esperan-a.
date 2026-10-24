@@ -1,0 +1,38 @@
+
+from pathlib import Path
+
+project = Path("nossa-rede-social")
+
+files = {
+    "README.md": """# Nossa Rede Social
+
+Projeto de uma rede social original para Android.
+Funcionalidades planejadas:
+- Cadastro e login seguro
+- Perfis de usuários
+- Publicações
+- Banco de dados
+""",
+    "index.html": """<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nossa Rede Social</title>
+</head>
+<body>
+  <h1>🚀 Nossa Rede Social</h1>
+  <p>Nosso projeto está começando!</p>
+</body>
+</html>
+"""
+}
+
+project.mkdir(exist_ok=True)
+
+for filename, content in files.items():
+    path = project / filename
+    path.parent.mkdir(parents=True, exist_ok=True)
+    path.write_text(content, encoding="utf-8")
+
+print("Arquivos iniciais criados!")
